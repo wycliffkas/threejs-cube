@@ -34,18 +34,18 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 5;
 
 const canvas = document.querySelector("canvas.threejs");
-
 const renderer = new THREE.WebGLRenderer({
   canvas,
   antialias: true
 });
+renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 //instantiate the controls
 const controls = new OrbitControls(camera, canvas);
 
 controls.enableDamping = true;
-
-controls.autoRotate = true;
+// controls.autoRotate = true;
 
 // const maxPixelRatio = Math.min(window.devicePixelRatio, 2)
 // renderer.setPixelRatio(maxPixelRatio)
